@@ -17,12 +17,13 @@
         /* 메인 컨테이너 */
         .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
         
-        /* 검색창 섹션 */
+        /* 네이버 검색창 섹션 */
         .search-section { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 25px; text-align: center; border: 1px solid #e2e8f0; }
         .search-box { display: flex; max-width: 600px; margin: 0 auto; gap: 8px; }
-        .search-box input { flex: 1; padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; outline: none; }
+        .search-box input { flex: 1; padding: 12px 16px; border: 2px solid #03cf5d; border-radius: 8px; font-size: 1rem; outline: none; }
         .search-box input:focus { border-color: #0284c7; }
-        .search-box button { padding: 12px 24px; background: #0284c7; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        .search-box button { padding: 12px 24px; background: #03cf5d; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1rem; }
+        .search-box button:hover { background: #02b350; }
 
         /* 자주 찾는 사이트 (아이콘 그리드) */
         .quick-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 12px; margin-bottom: 30px; }
@@ -30,7 +31,7 @@
         .quick-item:hover { transform: translateY(-3px); border-color: #0284c7; color: #0284c7; }
         .quick-icon { font-size: 1.5rem; display: block; margin-bottom: 5px; }
 
-        /* 2열 레이아웃 (메인 콘텐츠 + 사이드바) */
+        /* 2열 레이아웃 */
         .main-layout { display: flex; gap: 25px; flex-wrap: wrap; }
         .content-area { flex: 3; min-width: 300px; }
         .sidebar { flex: 1; min-width: 260px; }
@@ -42,12 +43,19 @@
         .link-btn { display: block; padding: 10px 12px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; text-decoration: none; color: #334155; font-size: 0.88rem; font-weight: 500; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .link-btn:hover { background: #e0f2fe; color: #0369a1; border-color: #7dd3fc; }
 
-        /* 사이드바 배너 및 세종테크 핫라인 */
+        /* 사이드바 배너 및 매장 음악 위젯 */
         .banner-box { background: linear-gradient(135deg, #0f172a, #1e293b); color: white; padding: 22px; border-radius: 12px; text-align: center; margin-bottom: 20px; border: 1px solid #334155; }
         .banner-box h3 { color: #38bdf8; margin-bottom: 8px; font-size: 1.25rem; font-weight: bold; }
         .banner-box p { font-size: 0.9rem; color: #cbd5e1; margin-bottom: 16px; line-height: 1.4; }
         .banner-btn { display: inline-block; padding: 11px 20px; background: #0284c7; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 0.95rem; width: 100%; box-sizing: border-box; }
         .banner-btn:hover { background: #0369a1; }
+
+        /* 음악 위젯 그리드 */
+        .music-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+        .music-btn { background: #f1f5f9; padding: 10px; border-radius: 8px; text-decoration: none; color: #334155; font-size: 0.82rem; text-align: center; border: 1px solid #e2e8f0; font-weight: 600; display: block; }
+        .music-btn:hover { background: #ff0000; color: white; border-color: #ff0000; }
+        .music-btn span { display: block; font-size: 0.72rem; color: #64748b; font-weight: normal; margin-bottom: 2px; }
+        .music-btn:hover span { color: #ffe4e4; }
 
         /* 하단 푸터 */
         footer { background: #f1f5f9; text-align: center; padding: 30px 20px; color: #64748b; font-size: 0.85rem; border-top: 1px solid #e2e8f0; margin-top: 40px; line-height: 1.8; }
@@ -62,10 +70,10 @@
     </header>
 
     <div class="container">
-        <!-- 통합 검색 -->
+        <!-- 네이버 통합 검색 -->
         <div class="search-section">
-            <form action="https://www.google.com/search" method="get" target="_blank" class="search-box">
-                <input type="text" name="q" placeholder="구글 검색어를 입력하세요..." required>
+            <form action="https://search.naver.com/search.naver" method="get" target="_blank" class="search-box">
+                <input type="text" name="query" placeholder="네이버 검색어를 입력하세요..." required>
                 <button type="submit">검색</button>
             </form>
         </div>
@@ -84,7 +92,7 @@
             <!-- 메인 링크 모음 -->
             <div class="content-area">
                 
-                <!-- 1. 카드사 및 매장 필수 업무 (요청 핵심) -->
+                <!-- 1. 카드사 및 매장 필수 업무 -->
                 <div class="category-card">
                     <div class="category-title">💳 카드사 & 가맹점 필수 업무</div>
                     <div class="link-grid">
@@ -95,42 +103,60 @@
                     </div>
                 </div>
 
-                <!-- 2. 매장 운영 & 세무 업무 -->
+                <!-- 2. 배달 주문접수 프로그램 -->
                 <div class="category-card">
-                    <div class="category-title">💼 매장 운영 & 세무·배달</div>
-                    <div class="link-grid">
-                        <a href="https://www.hometax.go.kr" target="_blank" class="link-btn">국세청 홈택스</a>
-                        <a href="https://www.gov.kr" target="_blank" class="link-btn">정부24</a>
-                        <a href="https://ceo.baemin.com/" target="_blank" class="link-btn">배민 사장님광장</a>
-                        <a href="https://owner.yogiyo.co.kr/" target="_blank" class="link-btn">요기요 사장님</a>
-                        <a href="https://boss.coupangeats.com" target="_blank" class="link-btn">쿠팡이츠 사장님</a>
-                        <a href="https://www.work24.go.kr/" target="_blank" class="link-btn">고용24 (근로계약)</a>
+                    <div class="category-title">🛵 배달 주문접수 프로그램</div>
+                    <div class="link-grid">                        
+                        <a href="https://ceo.baemin.com/relaychannel" target="_blank" class="link-btn">배민 사장님광장</a>
+                        <a href="https://partner.yogiyo.co.kr/guide/order" target="_blank" class="link-btn">요기요 사장님</a>
+                        <a href="https://store.coupangeats.com/" target="_blank" class="link-btn">쿠팡이츠 사장님</a>                    
                     </div>
                 </div>
 
-                <!-- 3. 포털 & 뉴스 & 유용한 도구 -->
+                <!-- 3. 매장 운영 & 세무 업무 -->
+                <div class="category-card">
+                    <div class="category-title">💼 매장 운영 & 세무</div>
+                    <div class="link-grid">
+                        <a href="https://www.hometax.go.kr" target="_blank" class="link-btn">국세청 홈택스</a>
+                        <a href="https://www.gov.kr" target="_blank" class="link-btn">정부24</a>                   
+                        <a href="https://www.work24.go.kr/" target="_blank" class="link-btn">고용24 (근로계약)</a>
+                    </div>
+                </div>
+                
+                <!-- 4. 포털 & 뉴스 & 유용한 도구 -->
                 <div class="category-card">
                     <div class="category-title">📌 검색 포털 & 주요 사이트</div>
                     <div class="link-grid">
                         <a href="https://www.naver.com" target="_blank" class="link-btn">네이버</a>
                         <a href="https://www.google.co.kr" target="_blank" class="link-btn">구글</a>
-                        <a href="https://www.daum.net" target="_blank" class="link-btn">다음</a>
-                        <a href="https://chatgpt.com" target="_blank" class="link-btn">ChatGPT</a>
-                        <a href="https://gemini.google.com" target="_blank" class="link-btn">Gemini AI</a>
+                        <a href="https://www.daum.net" target="_blank" class="link-btn">다음</a>                        
                         <a href="https://weather.naver.com" target="_blank" class="link-btn">네이버 날씨</a>
                     </div>
                 </div>
 
             </div>
 
-            <!-- 오른쪽 사이드바 (세종테크 고객센터) -->
+            <!-- 오른쪽 사이드바 -->
             <div class="sidebar">
+                <!-- 세종테크 안내 배너 -->
                 <div class="banner-box">
                     <h3>주식회사 세종테크</h3>
                     <p>POS · 키오스크 · 카드단말기<br>설치, 관리 및 신속 A/S 전문</p>
                     <a href="tel:010-0000-0000" class="banner-btn">📞 관리/장애 문의하기</a>
                 </div>
 
+                <!-- 매장 BGM 추천 위젯 (유튜브 연동) -->
+                <div class="category-card">
+                    <div class="category-title">🎵 매장 BGM & 음악 추천</div>
+                    <div class="music-grid">
+                        <a href="https://www.youtube.com/results?search_query=카페+커피+재즈" target="_blank" class="music-btn"><span>매장 맞춤</span>☕ 카페 재즈</a>
+                        <a href="https://www.youtube.com/results?search_query=음식점+편안한+음악" target="_blank" class="music-btn"><span>매장 맞춤</span>🍱 식당 BGM</a>
+                        <a href="https://www.youtube.com/results?search_query=레스토랑+디너+음악" target="_blank" class="music-btn"><span>매장 맞춤</span>🍷 분위기 클래식</a>
+                        <a href="https://www.youtube.com/results?search_query=매장+신나는+팝송" target="_blank" class="music-btn"><span>매장 맞춤</span>🎵 신나는 팝송</a>
+                    </div>
+                </div>
+
+                <!-- 비품 쇼핑몰 -->
                 <div class="category-card" style="text-align: center;">
                     <div class="category-title" style="justify-content: center;">🛒 매장 비품 쇼핑몰</div>
                     <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">영수증 용지/소모품 구매</p>

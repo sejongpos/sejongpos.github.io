@@ -47,10 +47,10 @@
         .content-area { flex: 3; min-width: 300px; }
         .sidebar { flex: 1; min-width: 260px; }
 
-        /* 카테고리 섹션 */
+        /* 카테고리 섹션 및 버튼 비율 정렬 수정 */
         .category-card { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 1px solid #e2e8f0; }
         .category-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; color: #0f172a; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; display: flex; align-items: center; gap: 6px; }
-        .link-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
+        .link-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; width: 100%; }
         .link-btn { display: block; width: 100%; padding: 10px 12px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; text-decoration: none; color: #334155; font-size: 0.88rem; font-weight: 500; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; font-family: inherit; }
         .link-btn:hover { background: #e0f2fe; color: #0369a1; border-color: #7dd3fc; }
 
@@ -293,7 +293,7 @@
         </div>
     </div>
 
-    <!-- ===== [3] 오시는 길 페이지 뷰 (지도 이미지 추가 완료) ===== -->
+    <!-- ===== [3] 오시는 길 페이지 뷰 ===== -->
     <div id="page-location" class="page-view">
         <div class="container">
             <div class="about-hero" style="background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80') center/cover;">
@@ -308,10 +308,9 @@
                     <p style="margin-top: 10px;"><strong>· 업무 시간 :</strong> 평일 09:00 ~ 18:00 (주말 및 공휴일 긴급 장애 A/S 접수 운영)</p>
                 </div>
 
-                <!-- 네이버 지도 캡처 이미지 넣는 곳 (나중에 map.png 사진을 폴더에 넣으면 자동으로 뜹니다!) -->
                 <div class="map-container">
                     <img src="map.png" alt="세종테크 오시는 길 지도" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1000&q=80';">
-                </div>               
+                </div>
             </div>
         </div>
     </div>

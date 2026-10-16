@@ -42,6 +42,19 @@
         .search-box button { padding: 12px 24px; background: #03cf5d; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1rem; }
         .search-box button:hover { background: #02b350; }
 
+        /* 가로형 주간 날씨 위젯 스타일 (사이드바 배치용 컴팩트 버전) */
+        .weather-card { background: #fff; border-radius: 12px; padding: 15px; margin-bottom: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .weather-title { font-size: 0.95rem; font-weight: bold; margin-bottom: 10px; color: #0f172a; display: flex; align-items: center; justify-content: space-between; }
+        .weather-title span { font-size: 0.75rem; color: #0284c7; font-weight: 600; }
+        .weather-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
+        .weather-day-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 2px; text-decoration: none; display: block; transition: transform 0.2s, background 0.2s, border-color 0.2s; color: inherit; }
+        .weather-day-box:hover { background: #e0f2fe; border-color: #7dd3fc; transform: translateY(-2px); }
+        .weather-day { font-size: 0.7rem; font-weight: bold; color: #475569; margin-bottom: 2px; }
+        .weather-icon { font-size: 1rem; margin-bottom: 2px; }
+        .weather-temps { display: flex; flex-direction: column; font-size: 0.68rem; gap: 1px; }
+        .temp-high { color: #dc2626; font-weight: bold; }
+        .temp-low { color: #2563eb; }
+
         /* 2열 레이아웃 */
         .main-layout { display: flex; gap: 25px; flex-wrap: wrap; }
         .content-area { flex: 3; min-width: 300px; }
@@ -178,7 +191,7 @@
     <!-- ===== [1] 메인 포털 페이지 뷰 ===== -->
     <div id="page-portal" class="page-view active">
         <div class="container">
-            <!-- 네이버 통합 검색 -->
+            <!-- 네이버 통합 검색 (맨 위 단독 깔끔 배치) -->
             <div class="search-section">
                 <form action="https://search.naver.com/search.naver" method="get" target="_blank" class="search-box">
                     <input type="text" name="query" placeholder="네이버 검색어를 입력하세요..." required>
@@ -189,7 +202,7 @@
             <div class="main-layout">
                 <!-- 메인 링크 모음 -->
                 <div class="content-area">
-                    <!-- 1. 포털 & 뉴스 & 유용한 도구 (네이버 날씨 삭제 완료) -->
+                    <!-- 1. 포털 & 뉴스 & 유용한 도구 -->
                     <div class="category-card">
                         <div class="category-title">📌 검색 포털 & 주요 사이트</div>
                         <div class="link-grid">
@@ -245,6 +258,50 @@
                             <a href="https://www.youtube.com/results?search_query=음식점+편안한+음악" target="_blank" class="music-btn"><span>매장 맞춤</span>🍱 식당 BGM</a>
                             <a href="https://www.youtube.com/results?search_query=레스토랑+디너+음악" target="_blank" class="music-btn"><span>매장 맞춤</span>🍷 분위기 클래식</a>
                             <a href="https://www.youtube.com/results?search_query=매장+신나는+팝송" target="_blank" class="music-btn"><span>매장 맞춤</span>🎵 신나는 팝송</a>
+                        </div>
+                    </div>
+
+                    <!-- [요청 반영] 매장 BGM과 비품 쇼핑몰 사이 주간 날씨 위젯 배치 -->
+                    <div class="weather-card">
+                        <div class="weather-title">
+                            🌤️ 주간 날씨 <a href="https://weather.naver.com/today/09140104" target="_blank" style="text-decoration: none;"><span>상세보기 ↗</span></a>
+                        </div>
+                        <div class="weather-grid">
+                            <a href="https://weather.naver.com/today/09140104" target="_blank" class="weather-day-box">
+                                <div class="weather-day">오늘</div>
+                                <div class="weather-icon">⛅</div>
+                                <div class="weather-temps"><span class="temp-low">12°</span><span class="temp-high">21°</span></div>
+                            </a>
+                            <a href="https://weather.naver.com/today/09140104" target="_blank" class="weather-day-box">
+                                <div class="weather-day">토</div>
+                                <div class="weather-icon">☀️</div>
+                                <div class="weather-temps"><span class="temp-low">10°</span><span class="temp-high">22°</span></div>
+                            </a>
+                            <a href="https://weather.naver.com/today/09140104" target="_blank" class="weather-day-box">
+                                <div class="weather-day">일</div>
+                                <div class="weather-icon">🌧️</div>
+                                <div class="weather-temps"><span class="temp-low">14°</span><span class="temp-high">18°</span></div>
+                            </a>
+                            <a href="https://weather.naver.com/today/09140104" target="_blank" class="weather-day-box">
+                                <div class="weather-day">월</div>
+                                <div class="weather-icon">☁️</div>
+                                <div class="weather-temps"><span class="temp-low">11°</span><span class="temp-high">19°</span></div>
+                            </a>
+                            <a href="https://weather.naver.com/today/09140104" target="_blank" class="weather-day-box">
+                                <div class="weather-day">화</div>
+                                <div class="weather-icon">☀️</div>
+                                <div class="weather-temps"><span class="temp-low">9°</span><span class="temp-high">20°</span></div>
+                            </a>
+                            <a href="https://weather.naver.com/today/09140104" target="_blank" class="weather-day-box">
+                                <div class="weather-day">수</div>
+                                <div class="weather-icon">☀️</div>
+                                <div class="weather-temps"><span class="temp-low">10°</span><span class="temp-high">21°</span></div>
+                            </a>
+                            <a href="https://weather.naver.com/today/09140104" target="_blank" class="weather-day-box">
+                                <div class="weather-day">목</div>
+                                <div class="weather-icon">⛅</div>
+                                <div class="weather-temps"><span class="temp-low">12°</span><span class="temp-high">23°</span></div>
+                            </a>
                         </div>
                     </div>
 

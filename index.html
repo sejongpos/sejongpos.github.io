@@ -47,10 +47,10 @@
         .content-area { flex: 3; min-width: 300px; }
         .sidebar { flex: 1; min-width: 260px; }
 
-        /* 카테고리 섹션 및 버튼 비율 정렬 수정 */
+        /* 카테고리 섹션 및 버튼 비율 꽉 차게 정렬 */
         .category-card { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 1px solid #e2e8f0; }
         .category-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; color: #0f172a; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; display: flex; align-items: center; gap: 6px; }
-        .link-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; width: 100%; }
+        .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; width: 100%; }
         .link-btn { display: block; width: 100%; padding: 10px 12px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; text-decoration: none; color: #334155; font-size: 0.88rem; font-weight: 500; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; font-family: inherit; }
         .link-btn:hover { background: #e0f2fe; color: #0369a1; border-color: #7dd3fc; }
 
@@ -189,14 +189,13 @@
             <div class="main-layout">
                 <!-- 메인 링크 모음 -->
                 <div class="content-area">
-                    <!-- 1. 포털 & 뉴스 & 유용한 도구 -->
+                    <!-- 1. 포털 & 뉴스 & 유용한 도구 (네이버 날씨 삭제 완료) -->
                     <div class="category-card">
                         <div class="category-title">📌 검색 포털 & 주요 사이트</div>
                         <div class="link-grid">
                             <a href="https://www.naver.com" target="_blank" class="link-btn">네이버</a>
                             <a href="https://www.google.co.kr" target="_blank" class="link-btn">구글</a>
                             <a href="https://www.daum.net" target="_blank" class="link-btn">다음</a>                        
-                            <a href="https://weather.naver.com" target="_blank" class="link-btn">네이버 날씨</a>
                         </div>
                     </div>
                     

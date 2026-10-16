@@ -38,6 +38,12 @@
         .search-box button { padding: 12px 24px; background: #03cf5d; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1rem; }
         .search-box button:hover { background: #02b350; }
 
+        /* 자주 찾는 사이트 (아이콘 그리드) */
+        .quick-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 12px; margin-bottom: 30px; }
+        .quick-item { background: #fff; padding: 15px 10px; border-radius: 10px; text-align: center; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; border: 1px solid #e2e8f0; transition: all 0.2s; }
+        .quick-item:hover { transform: translateY(-3px); border-color: #0284c7; color: #0284c7; }
+        .quick-icon { font-size: 1.5rem; display: block; margin-bottom: 5px; }
+
         /* 2열 레이아웃 */
         .main-layout { display: flex; gap: 25px; flex-wrap: wrap; }
         .content-area { flex: 3; min-width: 300px; }
@@ -148,17 +154,17 @@
         </div>
 
         <div class="main-layout">
-            <!-- 왼쪽 컨텐츠 영역 -->
+            <!-- 메인 링크 모음 -->
             <div class="content-area">
 
                 <!-- 1. 포털 & 뉴스 & 유용한 도구 -->
                 <div class="category-card">
                     <div class="category-title">📌 검색 포털 & 주요 사이트</div>
                     <div class="link-grid">
-                        <a href="https://www.naver.com" target="_blank" class="link-btn">네이버</a>
-                        <a href="https://www.google.co.kr" target="_blank" class="link-btn">구글</a>
-                        <a href="https://www.daum.net" target="_blank" class="link-btn">다음</a>                        
-                        <a href="https://weather.naver.com" target="_blank" class="link-btn">네이버 날씨</a>
+                        <a href="https://www.naver.com" target="_blank" class="quick-item"><span class="quick-icon">🇳</span>네이버</a>
+                        <a href="https://www.google.com" target="_blank" class="quick-item"><span class="quick-icon">G</span>구글</a>
+                        <a href="https://www.daum.net" target="_blank" class="quick-item"><span class="quick-icon">D</span>다음</a>
+                        <a href="https://www.youtube.com" target="_blank" class="quick-item"><span class="quick-icon">▶️</span>유튜브</a>                        
                     </div>
                 </div>
                 
@@ -186,10 +192,8 @@
                 <div class="category-card">
                     <div class="category-title">💳 카드사 & 가맹점 필수 업무</div>
                     <div class="link-grid">
-                        <a href="https://www.cardsales.or.kr/" target="_blank" class="link-btn">여신금융협회 카드매출</a>
-                        <a href="https://gongsi.crefia.or.kr/portal/financialConInfo/branchCards" target="_blank" class="link-btn">가맹점 등급 조회</a>
-                        <button type="button" class="link-btn" onclick="openModal()">카드사 가맹번호 조회</button>
-                        <a href="https://www.cardpoint.or.kr" target="_blank" class="link-btn">카드매출 입금조회</a>
+                        <a href="https://www.cardpoint.or.kr" target="_blank" class="link-btn">카드매출 입금조회</a>                        
+                        <button type="button" class="link-btn" onclick="openModal()">카드사 가맹번호 조회</button>                        
                     </div>
                 </div>
 
@@ -208,4 +212,131 @@
                 <div class="category-card">
                     <div class="category-title">🎵 매장 BGM & 음악 추천</div>
                     <div class="music-grid">
-                        <a href="
+                        <a href="https://www.youtube.com/results?search_query=카페+커피+재즈" target="_blank" class="music-btn"><span>매장 맞춤</span>☕ 카페 재즈</a>
+                        <a href="https://www.youtube.com/results?search_query=음식점+편안한+음악" target="_blank" class="music-btn"><span>매장 맞춤</span>🍱 식당 BGM</a>
+                        <a href="https://www.youtube.com/results?search_query=레스토랑+디너+음악" target="_blank" class="music-btn"><span>매장 맞춤</span>🍷 분위기 클래식</a>
+                        <a href="https://www.youtube.com/results?search_query=매장+신나는+팝송" target="_blank" class="music-btn"><span>매장 맞춤</span>🎵 신나는 팝송</a>
+                    </div>
+                </div>
+
+                <!-- 비품 쇼핑몰 -->
+                <div class="category-card" style="text-align: center;">
+                    <div class="category-title" style="justify-content: center;">🛒 매장 비품 쇼핑몰</div>
+                    <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">영수증 용지/소모품 구매</p>
+                    <a href="https://www.coupang.com" target="_blank" class="link-btn" style="background: #fee2e2; color: #dc2626; border: none; font-weight: bold;">쿠팡 소모품 바로가기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 카드사 가맹번호 조회 모달 팝업 -->
+    <div class="modal-overlay" id="cardModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title">카드사 가맹번호 조회</div>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            
+            <div class="modal-info">
+                카드사를 선택해 공식 조회 화면에서 사업자번호로 확인해 주세요. 제공처에 따라 로그인·본인인증이 필요할 수 있습니다.
+            </div>
+
+            <div class="card-grid">
+                <!-- BC카드 -->
+                <div class="card-item">
+                    <div class="card-name">BC카드</div>
+                    <a href="https://merchant.bccard.com/app/merchant/StoreNoInqActn.do" target="_blank" class="card-link">가맹점 조회 ↗</a>
+                    <div class="card-tel">☎ 1588-4500</div>
+                </div>
+                <!-- KB국민카드 -->
+                <div class="card-item">
+                    <div class="card-name">KB국민카드</div>
+                    <a href="https://biz.kbcard.com/CXERFMGC0009.cms" target="_blank" class="card-link">가맹점 조회 ↗</a>
+                    <div class="card-tel">☎ 1588-1688</div>
+                </div>
+                <!-- 삼성카드 -->
+                <div class="card-item">
+                    <div class="card-name">삼성카드</div>
+                    <a href="https://www.samsungcard.com/merchant/number/UHPMMM0101M0.jsp" target="_blank" class="card-link">가맹점 조회 ↗</a>
+                    <div class="card-tel">☎ 1588-8700</div>
+                </div>
+                <!-- 신한카드 -->
+                <div class="card-item">
+                    <div class="card-name">신한카드</div>
+                    <a href="https://myshoppartner.shinhancard.com/bfm/BFMFM502N/BFMFM50201R01.shc" target="_blank" class="card-link">가맹점 조회 ↗</a>
+                    <div class="card-tel">☎ 1544-7000</div>
+                </div>
+                <!-- 현대카드 -->
+                <div class="card-item">
+                    <div class="card-name">현대카드</div>
+                    <a href="https://bizhub.hyundaicard.com/me/main.do" target="_blank" class="card-link">가맹점 조회 ↗</a>
+                    <div class="card-tel">☎ 1577-6000</div>
+                </div>
+                <!-- 롯데카드 -->
+                <div class="card-item">
+                    <div class="card-name">롯데카드</div>
+                    <a href="https://merchant.lottecard.co.kr/app/LMSVCFA_V100.lc" target="_blank" class="card-link">가맹점 조회 ↗</a>
+                    <div class="card-tel">☎ 1588-8100</div>
+                </div>
+                <!-- NH농협카드 -->
+                <div class="card-item">
+                    <div class="card-name">NH농협카드</div>
+                    <a href="https://nhbizcard.nonghyup.com/imqi0010i.act" target="_blank" class="card-link">가맹점 조회 ↗</a>
+                    <div class="card-tel">☎ 1644-7400</div>
+                </div>
+                <!-- 하나카드 -->
+                <div class="card-item">
+                    <div class="card-name">하나카드</div>
+                    <a href="https://www.hanacard.co.kr/MA25000000M.web" target="_blank" class="card-link">가맹점 조회 ↗</a>
+                    <div class="card-tel">☎ 1800-1111</div>
+                </div>
+                <!-- 우리카드 -->
+                <div class="card-item">
+                    <div class="card-name">우리카드</div>
+                    <a href="https://nm.wooricard.com/dcmw/yh1/mcd/mcd14/M1MCD214S30.do" target="_blank" class="card-link">가맹점 조회 ↗</a>
+                    <div class="card-tel">☎ 1644-9797</div>
+                </div>
+                <!-- 카카오페이 -->
+                <div class="card-item">
+                    <div class="card-name">카카오페이</div>
+                    <a href="https://partner.kakaopay.com" target="_blank" class="card-link">파트너센터 ↗</a>
+                    <div class="card-tel">☎ 1644-7108</div>
+                </div>
+            </div>
+
+            <div class="modal-footer-note">
+                BC 제휴 은행은 BC카드에서도 확인할 수 있습니다. 카카오페이는 파트너센터의 가맹점 코드 조회 또는 전화로 문의해 주세요.
+            </div>
+
+            <div class="modal-footer-link">
+                <a href="https://www.kcp.co.kr" target="_blank">KCP VAN 바로가기 ↗</a> · 로그인 후 정보관리 → 가맹점정보 → 등록에서 조회
+            </div>
+
+            <button class="modal-btn-close" onclick="closeModal()">닫기</button>
+        </div>
+    </div>
+
+    <!-- 푸터 (회사 정보) -->
+    <footer>
+        <p><strong>주식회사 세종테크</strong> | 대표 : 김성호 | 사업자등록번호 : 481-86-00649</p>
+        <p>주소 : 경기도 용인시 기흥구 중부대로 184 , A동 408호</p>
+        <p style="margin-top: 8px; color: #94a3b8; font-size: 0.8rem;">Copyright © SEJONG TECH. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('cardModal').classList.add('active');
+        }
+        function closeModal() {
+            document.getElementById('cardModal').classList.remove('active');
+        }
+        // 배경 클릭 시 닫기
+        document.getElementById('cardModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>

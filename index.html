@@ -14,7 +14,7 @@
         .logo { font-size: 1.5rem; font-weight: 800; color: #38bdf8; text-decoration: none; letter-spacing: -0.5px; }
         .logo span { color: #ffffff; font-weight: 400; font-size: 1.1rem; margin-left: 6px; }
 
-        /* 회사 홈페이지 네비게이션 바 (GNB) */
+        /* 상단 네비게이션 바 (GNB) */
         .gnb-nav { background: #1e293b; border-bottom: 1px solid #334155; }
         .gnb-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; list-style: none; position: relative; }
         .gnb-item { position: relative; }
@@ -86,4 +86,42 @@
         .card-tel { font-size: 0.82rem; color: #64748b; }
         .modal-footer-note { font-size: 0.78rem; color: #64748b; line-height: 1.4; margin-bottom: 15px; }
         .modal-footer-link { font-size: 0.82rem; color: #475569; margin-bottom: 20px; }
-        .modal-footer-link a { color: #0284c7
+        .modal-footer-link a { color: #0284c7; text-decoration: none; font-weight: bold; }
+        .modal-btn-close { display: block; width: 100%; padding: 12px; background: #e2e8f0; color: #334155; border: none; border-radius: 8px; font-weight: bold; font-size: 0.95rem; cursor: pointer; text-align: center; }
+        .modal-btn-close:hover { background: #cbd5e1; }
+
+        /* 하단 푸터 */
+        footer { background: #f1f5f9; text-align: center; padding: 30px 20px; color: #64748b; font-size: 0.85rem; border-top: 1px solid #e2e8f0; margin-top: 40px; line-height: 1.8; }
+        footer strong { color: #334155; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">SEJONG TECH <span>세종테크 매장 포털</span></a>
+        <div style="font-size: 0.85rem; color: #94a3b8;">POS / KIOSK / 카드단말기 전문</div>
+    </header>
+
+    <!-- 회사 홈페이지형 상단 대분류/중분류 네비게이션 바 -->
+    <nav class="gnb-nav">
+        <ul class="gnb-container">
+            <!-- 1. 회사소개 -->
+            <li class="gnb-item">
+                <a href="#company" class="gnb-link">회사소개</a>
+                <ul class="sub-menu">
+                    <li><a href="#about">회사소개</a></li>
+                    <li><a href="#location">오시는길</a></li>
+                    <li><a href="#org">조직도</a></li>
+                </ul>
+            </li>
+            <!-- 2. 사업안내 -->
+            <li class="gnb-item">
+                <a href="#business" class="gnb-link">사업안내</a>
+                <ul class="sub-menu">
+                    <li><a href="#pos-biz">POS 시스템 구축</a></li>
+                    <li><a href="#kiosk-biz">무인 키오스크 설치</a></li>
+                    <li><a href="#card-biz">카드단말기 관리</a></li>
+                </ul>
+            </li>
+            <!-- 3. 제품소개 -->
+            <li class="gnb-item">

@@ -13,6 +13,19 @@
         header { background: #0f172a; color: white; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #0284c7; }
         .logo { font-size: 1.5rem; font-weight: 800; color: #38bdf8; text-decoration: none; letter-spacing: -0.5px; }
         .logo span { color: #ffffff; font-weight: 400; font-size: 1.1rem; margin-left: 6px; }
+
+        /* 회사 홈페이지 네비게이션 바 (GNB) */
+        .gnb-nav { background: #1e293b; border-bottom: 1px solid #334155; }
+        .gnb-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; list-style: none; position: relative; }
+        .gnb-item { position: relative; }
+        .gnb-link { display: block; padding: 14px 24px; color: #f8fafc; font-weight: 700; text-decoration: none; font-size: 1rem; transition: background 0.2s, color 0.2s; }
+        .gnb-item:hover .gnb-link { background: #0284c7; color: #ffffff; }
+
+        /* 중분류 드롭다운 메뉴 */
+        .sub-menu { display: none; position: absolute; top: 100%; left: 0; background: #ffffff; min-width: 170px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none; list-style: none; z-index: 500; }
+        .sub-menu li a { display: block; padding: 11px 18px; color: #334155; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: background 0.2s, color 0.2s; }
+        .sub-menu li a:hover { background: #e0f2fe; color: #0284c7; font-weight: bold; }
+        .gnb-item:hover .sub-menu { display: block; }
         
         /* 메인 컨테이너 */
         .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
@@ -27,7 +40,7 @@
 
         /* 자주 찾는 사이트 (아이콘 그리드) */
         .quick-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 12px; margin-bottom: 30px; }
-        .quick-item { background: #fff; padding: 15px 10px; border-radius: 10px; text-align: center; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; border: 1px solid #e2e8f0; transition: all 0.2s; }
+        .quick-item { background: #fff; padding: 15px 10px; border-radius: 10px; text-align: center; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; border: 1px solid #e2e8f0; transition: all 0.2s; display: block; }
         .quick-item:hover { transform: translateY(-3px); border-color: #0284c7; color: #0284c7; }
         .quick-icon { font-size: 1.5rem; display: block; margin-bottom: 5px; }
 
@@ -73,219 +86,4 @@
         .card-tel { font-size: 0.82rem; color: #64748b; }
         .modal-footer-note { font-size: 0.78rem; color: #64748b; line-height: 1.4; margin-bottom: 15px; }
         .modal-footer-link { font-size: 0.82rem; color: #475569; margin-bottom: 20px; }
-        .modal-footer-link a { color: #0284c7; text-decoration: none; font-weight: bold; }
-        .modal-btn-close { display: block; width: 100%; padding: 12px; background: #e2e8f0; color: #334155; border: none; border-radius: 8px; font-weight: bold; font-size: 0.95rem; cursor: pointer; text-align: center; }
-        .modal-btn-close:hover { background: #cbd5e1; }
-
-        /* 하단 푸터 */
-        footer { background: #f1f5f9; text-align: center; padding: 30px 20px; color: #64748b; font-size: 0.85rem; border-top: 1px solid #e2e8f0; margin-top: 40px; line-height: 1.8; }
-        footer strong { color: #334155; }
-    </style>
-</head>
-<body>
-
-    <header>
-        <a href="#" class="logo">SEJONG TECH <span>세종테크 매장 포털</span></a>
-        <div style="font-size: 0.85rem; color: #94a3b8;">POS / KIOSK / 카드단말기 전문</div>
-    </header>
-
-    <div class="container">
-        <!-- 네이버 통합 검색 -->
-        <div class="search-section">
-            <form action="https://search.naver.com/search.naver" method="get" target="_blank" class="search-box">
-                <input type="text" name="query" placeholder="네이버 검색어를 입력하세요..." required>
-                <button type="submit">검색</button>
-            </form>
-        </div>
-
-        <div class="main-layout">
-            <!-- 메인 링크 모음 -->
-            <div class="content-area">
-
-               
-                <!-- 1. 포털 & 뉴스 & 유용한 도구 -->
-                <div class="category-card">
-                    <div class="category-title">📌 검색 포털 & 주요 사이트</div>
-                    <div class="link-grid">
-                        <a href="https://www.naver.com" target="_blank" class="quick-item"><span class="quick-icon">🇳</span>네이버</a>
-                        <a href="https://www.google.com" target="_blank" class="quick-item"><span class="quick-icon">G</span>구글</a>
-                        <a href="https://www.daum.net" target="_blank" class="quick-item"><span class="quick-icon">D</span>다음</a>
-                        <a href="https://www.youtube.com" target="_blank" class="quick-item"><span class="quick-icon">▶️</span>유튜브</a>                        
-                    </div>
-                </div>
-                
-                <!-- 2. 배달 주문접수 프로그램 -->
-                <div class="category-card">
-                    <div class="category-title">🛵 배달 주문접수 프로그램</div>
-                    <div class="link-grid">                        
-                        <a href="https://ceo.baemin.com/relaychannel" target="_blank" class="link-btn">배민 사장님광장</a>
-                        <a href="https://partner.yogiyo.co.kr/guide/order" target="_blank" class="link-btn">요기요 사장님</a>
-                        <a href="https://store.coupangeats.com/" target="_blank" class="link-btn">쿠팡이츠 사장님</a>                    
-                    </div>
-                </div>
-
-                
-                <!-- 3. 매장 운영 & 세무 업무 -->
-                <div class="category-card">
-                    <div class="category-title">💼 매장 운영 & 세무</div>
-                    <div class="link-grid">
-                        <a href="https://www.hometax.go.kr" target="_blank" class="link-btn">국세청 홈택스</a>
-                        <a href="https://www.gov.kr" target="_blank" class="link-btn">정부24</a>                    
-                        <a href="https://www.work24.go.kr/" target="_blank" class="link-btn">고용24 (근로계약)</a>
-                    </div>
-                </div>
-
-                
-                <!-- 4. 카드사 및 매장 필수 업무 -->
-                <div class="category-card">
-                    <div class="category-title">💳 카드사 & 가맹점 필수 업무</div>
-                    <div class="link-grid">
-                        <a href="https://www.cardpoint.or.kr" target="_blank" class="link-btn">카드매출 입금조회</a>                        
-                        <button type="button" class="link-btn" onclick="openModal()">카드사 가맹번호 조회</button>                        
-                    </div>
-                </div>
-                                           
-
-            </div>
-
-            <!-- 오른쪽 사이드바 -->
-            <div class="sidebar">
-                <!-- 세종테크 안내 배너 -->
-                <div class="banner-box">
-                    <h3>주식회사 세종테크</h3>
-                    <p>POS · 키오스크 · 카드단말기<br>설치, 관리 및 신속 A/S 전문</p>
-                    <a href="tel:010-0000-0000" class="banner-btn">📞 관리/장애 문의하기</a>
-                </div>
-
-                <!-- 매장 BGM 추천 위젯 (유튜브 연동) -->
-                <div class="category-card">
-                    <div class="category-title">🎵 매장 BGM & 음악 추천</div>
-                    <div class="music-grid">
-                        <a href="https://www.youtube.com/results?search_query=카페+커피+재즈" target="_blank" class="music-btn"><span>매장 맞춤</span>☕ 카페 재즈</a>
-                        <a href="https://www.youtube.com/results?search_query=음식점+편안한+음악" target="_blank" class="music-btn"><span>매장 맞춤</span>🍱 식당 BGM</a>
-                        <a href="https://www.youtube.com/results?search_query=레스토랑+디너+음악" target="_blank" class="music-btn"><span>매장 맞춤</span>🍷 분위기 클래식</a>
-                        <a href="https://www.youtube.com/results?search_query=매장+신나는+팝송" target="_blank" class="music-btn"><span>매장 맞춤</span>🎵 신나는 팝송</a>
-                    </div>
-                </div>
-
-                <!-- 비품 쇼핑몰 -->
-                <div class="category-card" style="text-align: center;">
-                    <div class="category-title" style="justify-content: center;">🛒 매장 비품 쇼핑몰</div>
-                    <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">영수증 용지/소모품 구매</p>
-                    <a href="https://www.coupang.com" target="_blank" class="link-btn" style="background: #fee2e2; color: #dc2626; border: none; font-weight: bold;">쿠팡 소모품 바로가기</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 카드사 가맹번호 조회 모달 팝업 -->
-    <div class="modal-overlay" id="cardModal">
-        <div class="modal-card">
-            <div class="modal-header">
-                <div class="modal-title">카드사 가맹번호 조회</div>
-                <button class="modal-close" onclick="closeModal()">✕</button>
-            </div>
-            
-            <div class="modal-info">
-                카드사를 선택해 공식 조회 화면에서 사업자번호로 확인해 주세요. 제공처에 따라 로그인·본인인증이 필요할 수 있습니다.
-            </div>
-
-            <div class="card-grid">
-                <!-- BC카드 -->
-                <div class="card-item">
-                    <div class="card-name">BC카드</div>
-                    <a href="https://merchant.bccard.com/app/merchant/StoreNoInqActn.do" target="_blank" class="card-link">가맹점 조회 ↗</a>
-                    <div class="card-tel">☎ 1588-4500</div>
-                </div>
-                <!-- KB국민카드 -->
-                <div class="card-item">
-                    <div class="card-name">KB국민카드</div>
-                    <a href="https://biz.kbcard.com/CXERFMGC0009.cms" target="_blank" class="card-link">가맹점 조회 ↗</a>
-                    <div class="card-tel">☎ 1588-1688</div>
-                </div>
-                <!-- 삼성카드 -->
-                <div class="card-item">
-                    <div class="card-name">삼성카드</div>
-                    <a href="https://www.samsungcard.com/merchant/number/UHPMMM0101M0.jsp" target="_blank" class="card-link">가맹점 조회 ↗</a>
-                    <div class="card-tel">☎ 1588-8700</div>
-                </div>
-                <!-- 신한카드 -->
-                <div class="card-item">
-                    <div class="card-name">신한카드</div>
-                    <a href="https://myshoppartner.shinhancard.com/bfm/BFMFM502N/BFMFM50201R01.shc" target="_blank" class="card-link">가맹점 조회 ↗</a>
-                    <div class="card-tel">☎ 1544-7000</div>
-                </div>
-                <!-- 현대카드 -->
-                <div class="card-item">
-                    <div class="card-name">현대카드</div>
-                    <a href="https://bizhub.hyundaicard.com/me/main.do" target="_blank" class="card-link">가맹점 조회 ↗</a>
-                    <div class="card-tel">☎ 1577-6000</div>
-                </div>
-                <!-- 롯데카드 -->
-                <div class="card-item">
-                    <div class="card-name">롯데카드</div>
-                    <a href="https://merchant.lottecard.co.kr/app/LMSVCFA_V100.lc" target="_blank" class="card-link">가맹점 조회 ↗</a>
-                    <div class="card-tel">☎ 1588-8100</div>
-                </div>
-                <!-- NH농협카드 -->
-                <div class="card-item">
-                    <div class="card-name">NH농협카드</div>
-                    <a href="https://nhbizcard.nonghyup.com/imqi0010i.act" target="_blank" class="card-link">가맹점 조회 ↗</a>
-                    <div class="card-tel">☎ 1644-7400</div>
-                </div>
-                <!-- 하나카드 -->
-                <div class="card-item">
-                    <div class="card-name">하나카드</div>
-                    <a href="https://www.hanacard.co.kr/MA25000000M.web" target="_blank" class="card-link">가맹점 조회 ↗</a>
-                    <div class="card-tel">☎ 1800-1111</div>
-                </div>
-                <!-- 우리카드 -->
-                <div class="card-item">
-                    <div class="card-name">우리카드</div>
-                    <a href="https://nm.wooricard.com/dcmw/yh1/mcd/mcd14/M1MCD214S30.do" target="_blank" class="card-link">가맹점 조회 ↗</a>
-                    <div class="card-tel">☎ 1644-9797</div>
-                </div>
-                <!-- 카카오페이 -->
-                <div class="card-item">
-                    <div class="card-name">카카오페이</div>
-                    <a href="https://partner.kakaopay.com" target="_blank" class="card-link">파트너센터 ↗</a>
-                    <div class="card-tel">☎ 1644-7108</div>
-                </div>
-            </div>
-
-            <div class="modal-footer-note">
-                BC 제휴 은행은 BC카드에서도 확인할 수 있습니다. 카카오페이는 파트너센터의 가맹점 코드 조회 또는 전화로 문의해 주세요.
-            </div>
-
-            <div class="modal-footer-link">
-                <a href="https://www.kcp.co.kr" target="_blank">KCP VAN 바로가기 ↗</a> · 로그인 후 정보관리 → 가맹점정보 → 등록에서 조회
-            </div>
-
-            <button class="modal-btn-close" onclick="closeModal()">닫기</button>
-        </div>
-    </div>
-
-    <!-- 푸터 (회사 정보) -->
-    <footer>
-        <p><strong>주식회사 세종테크</strong> | 대표 : 김성호 | 사업자등록번호 : 481-86-00649</p>
-        <p>주소 : 경기도 용인시 기흥구 중부대로 184 , A동 408호</p>
-        <p style="margin-top: 8px; color: #94a3b8; font-size: 0.8rem;">Copyright © SEJONG TECH. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        function openModal() {
-            document.getElementById('cardModal').classList.add('active');
-        }
-        function closeModal() {
-            document.getElementById('cardModal').classList.remove('active');
-        }
-        // 배경 클릭 시 닫기
-        document.getElementById('cardModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-    </script>
-
-</body>
-</html>
+        .modal-footer-link a { color: #0284c7

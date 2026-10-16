@@ -15,20 +15,20 @@
         .logo span { color: #ffffff; font-weight: 400; font-size: 1.1rem; margin-left: 6px; }
 
         /* 상단 네비게이션 바 (GNB) */
-        .gnb-nav { background: #1e293b; border-bottom: 1px solid #334155; }
-        .gnb-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; list-style: none; position: relative; }
+        .gnb-nav { background: #1e293b; border-bottom: 1px solid #334155; width: 100%; }
+        .gnb-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; list-style: none; }
         .gnb-item { position: relative; }
         .gnb-link { display: block; padding: 14px 24px; color: #f8fafc; font-weight: 700; text-decoration: none; font-size: 1rem; transition: background 0.2s, color 0.2s; }
         .gnb-item:hover .gnb-link { background: #0284c7; color: #ffffff; }
 
         /* 중분류 드롭다운 메뉴 */
-        .sub-menu { display: none; position: absolute; top: 100%; left: 0; background: #ffffff; min-width: 170px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none; list-style: none; z-index: 500; }
+        .sub-menu { display: none; position: absolute; top: 100%; left: 0; background: #ffffff; min-width: 170px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none; list-style: none; z-index: 100; }
         .sub-menu li a { display: block; padding: 11px 18px; color: #334155; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: background 0.2s, color 0.2s; }
         .sub-menu li a:hover { background: #e0f2fe; color: #0284c7; font-weight: bold; }
         .gnb-item:hover .sub-menu { display: block; }
         
         /* 메인 컨테이너 */
-        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; clear: both; }
         
         /* 네이버 검색창 섹션 */
         .search-section { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 25px; text-align: center; border: 1px solid #e2e8f0; }
@@ -125,3 +125,47 @@
             </li>
             <!-- 3. 제품소개 -->
             <li class="gnb-item">
+                <a href="#products" class="gnb-link">제품소개</a>
+                <ul class="sub-menu">
+                    <li><a href="#pos-prod">포스기 단말기</a></li>
+                    <li><a href="#kiosk-prod">테이블오더/키오스크</a></li>
+                    <li><a href="#etc-prod">소모품 및 비품</a></li>
+                </ul>
+            </li>
+            <!-- 4. 고객센터 -->
+            <li class="gnb-item">
+                <a href="#support" class="gnb-link">고객센터</a>
+                <ul class="sub-menu">
+                    <li><a href="#notice">공지사항</a></li>
+                    <li><a href="#faq">자주 묻는 질문</a></li>
+                    <li><a href="#as">A/S 및 장애문의</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- 네이버 통합 검색 -->
+        <div class="search-section">
+            <form action="https://search.naver.com/search.naver" method="get" target="_blank" class="search-box">
+                <input type="text" name="query" placeholder="네이버 검색어를 입력하세요..." required>
+                <button type="submit">검색</button>
+            </form>
+        </div>
+
+        <div class="main-layout">
+            <!-- 메인 링크 모음 -->
+            <div class="content-area">
+
+                <!-- 1. 포털 & 뉴스 & 유용한 도구 -->
+                <div class="category-card">
+                    <div class="category-title">📌 검색 포털 & 주요 사이트</div>
+                    <div class="link-grid">
+                        <a href="https://www.naver.com" target="_blank" class="link-btn">네이버</a>
+                        <a href="https://www.google.co.kr" target="_blank" class="link-btn">구글</a>
+                        <a href="https://www.daum.net" target="_blank" class="link-btn">다음</a>                        
+                        <a href="https://weather.naver.com" target="_blank" class="link-btn">네이버 날씨</a>
+                    </div>
+                </div>
+                
+                <!--

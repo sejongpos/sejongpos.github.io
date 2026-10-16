@@ -83,6 +83,10 @@
         .value-title { font-weight: bold; font-size: 1.1rem; color: #0f172a; margin-bottom: 8px; }
         .value-desc { font-size: 0.9rem; color: #64748b; line-height: 1.5; }
 
+        /* 지도 이미지 영역 스타일 */
+        .map-container { width: 100%; margin-top: 20px; border-radius: 10px; overflow: hidden; border: 1px solid #cbd5e1; background: #f1f5f9; text-align: center; }
+        .map-container img { width: 100%; height: auto; display: block; }
+
         /* 조직도 카드 스타일 */
         .org-tree { display: flex; flex-direction: column; align-items: center; gap: 25px; margin-top: 20px; }
         .org-level-1 { width: 100%; max-width: 320px; }
@@ -289,7 +293,7 @@
         </div>
     </div>
 
-    <!-- ===== [3] 오시는 길 페이지 뷰 ===== -->
+    <!-- ===== [3] 오시는 길 페이지 뷰 (지도 이미지 추가 완료) ===== -->
     <div id="page-location" class="page-view">
         <div class="container">
             <div class="about-hero" style="background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80') center/cover;">
@@ -298,11 +302,17 @@
             </div>
             <div class="about-section">
                 <h2>본사 위치 및 연락처</h2>
-                <div class="about-text" style="margin-bottom: 0;">
+                <div class="about-text" style="margin-bottom: 15px;">
                     <p><strong>· 본사 주소 :</strong> 경기도 용인시 기흥구 중부대로 184 , A동 408호 (주식회사 세종테크)</p>
                     <p style="margin-top: 10px;"><strong>· 고객센터 :</strong> POS/키오스크 신규 설치 및 장애 문의 (대표 전화 연결)</p>
                     <p style="margin-top: 10px;"><strong>· 업무 시간 :</strong> 평일 09:00 ~ 18:00 (주말 및 공휴일 긴급 장애 A/S 접수 운영)</p>
                 </div>
+
+                <!-- 네이버 지도 캡처 이미지 넣는 곳 (나중에 map.png 사진을 폴더에 넣으면 자동으로 뜹니다!) -->
+                <div class="map-container">
+                    <img src="map.png" alt="세종테크 오시는 길 지도" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1000&q=80';">
+                </div>
+                <p style="font-size: 0.8rem; color: #64748b; text-align: center; margin-top: 8px;">* 꿀팁: 폴더 안에 지도 캡처 사진을 <strong>map.png</strong> 이름으로 넣으면 이 자리에 형이 원하는 지도가 딱 뜹니다!</p>
             </div>
         </div>
     </div>
